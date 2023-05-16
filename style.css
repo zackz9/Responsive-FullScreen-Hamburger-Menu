@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Krona One', sans-serif;
+
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+
+}
+.navbar {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 3em;
+}
+
+
+.site-logo {
+    font-size: 18px;
+    color: #000;
+}
+.header {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+#menu-toggle-btn {
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    transition: .5s ease;
+    font-size: 80px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 500;
+    cursor: pointer;
+}
+span {
+    height: 2px;
+    background-color: #000;
+    width: 24px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transition: .5s ease-in-out;
+}
+
+span::before {
+    content:' ';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    top: -2px;
+    transform: translateY(-4px);
+    transition: .5s ease-in-out;
+}
+
+.active span {
+    transform: rotate(45deg);
+    background: #fff;
+}
+.active span::before {
+    top: unset;
+    transform: rotate(-90deg);
+    background: #fff;
+}
+
+.active:hover span::before {
+    top:unset;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    transition: .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+
+}
+
+.nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+
+.nav-logo {
+    font-weight: 300;
+    margin-top:  -0.2em;
+    text-transform: uppercase;
+    font-weight: 120px;
+
+}
+
+.nav-link {
+    position: relative;
+}
+.nav-link a {
+    position: relative;
+    top: 60px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 60px;
+    font-weight: lighter;
+}
+.nav-item-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 500px;
+    height: 60px;
+    background: #000;
+    margin: 0 auto;
+    transition: 1s;
+
+}
+
+.nav-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 2em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+.nav-item-wrapper {
+    position: absolute;
+}
+.nav-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.nav-socials a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media(max-width: 900px) {
+    .nav {
+        flex-direction: column-reverse;
+    }
+    .nav-logo {
+        display: none;
+    }
+    .nav-socials {
+        flex-direction: row;
+        margin-top: 4em;
+
+    }
+
+    .nav-socials a {
+        padding: 0 0.4em;
+    }
+    .nav-footer {
+        display: none;
+
+    }
+
+
+}
